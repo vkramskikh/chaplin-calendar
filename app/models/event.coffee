@@ -1,0 +1,1 @@
+module.exports = class CalendarEvent extends Chaplin.Collection
