@@ -13,10 +13,21 @@ class GridCalendarEventView extends BaseView
     ':el':
       observe: ['start', 'end']
       update: ($el, time) ->
-        $el.height time[1] - time[0]
         $el.css 'top', time[0] + 'px'
+    '.grid-event-content':
+      observe: ['start', 'end']
+      update: ($el, time) ->
+        $el.height time[1] - time[0] - 1
   render: ->
     super
+    @$el.draggable({
+      snap: true
+      axis: 'y'
+      grid: [0, 30]
+      opacity: 0.5
+      containment: '#grid'
+      stack: '#grid-events .grid-event'
+    })
     @stickit @model
 
 module.exports = class GridCalendarEventsView extends Chaplin.CollectionView

@@ -14,12 +14,14 @@ h1 {
   border-bottom: 0;
   position: relative;
   width: 500px;
+  margin-bottom: 40px;
 }
 
 .grid-cell {
+  font-size: 12px;
   height: 30px;
   border-bottom: 1px solid #DDDDDD;
-  padding: 5px 0 0 5px;
+  padding: 5px 0 0 6px;
 }
 
 #grid-events {
@@ -30,13 +32,16 @@ h1 {
 .grid-event {
   position: absolute;
   top: 0;
-  font-size: 12px;
   width: 498px;
-  height: 30px;
+  overflow: hidden;
+  cursor: move;
+}
+
+.grid-event-content {
+  font-size: 12px;
+  border: 1px solid #9FC6E7;
   background-color: #E4EFF8;
   color: #444444;
-  border: 1px solid #9FC6E7;
-  overflow: hidden;
 }
 
 .grid-event .event-time {
