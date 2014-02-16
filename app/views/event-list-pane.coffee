@@ -8,8 +8,13 @@ module.exports = class CalendarEventListPaneView extends BaseView
   events:
     'click button[name=add-event]': 'addEvent'
   addEvent: ->
-    @collection.add(new @collection.model)
-    console.log(@collection)
+    newEvent = new @collection.model({
+      name: ''
+      start: 0
+      end: @collection.model::interval
+    })
+    @collection.add(newEvent)
+    newEvent.save()
   render: ->
     super
     calendarEventListView = new ListCalendarEventsView {
