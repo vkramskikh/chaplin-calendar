@@ -12,7 +12,9 @@
     "console-polyfill": "~0.1.0",
     "lodash": "~2.1.0",
     "jquery": "~2.0.2",
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "backbone.localStorage": "~1.1.7",
+    "backbone.stickit": "https://raw.github.com/NYTimes/backbone.stickit/7437202ec91863aa29a6ad31b0bd00c6b130f506/backbone.stickit.js"
   },
   "overrides": {
     "backbone": {
