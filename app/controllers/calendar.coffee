@@ -11,7 +11,4 @@ module.exports = class CalendarController extends Chaplin.Controller
   index: (params) ->
     @collection = new CalendarEvents
     @collection.fetch()
-    @view = new CalendarMainView {
-      autoRender: true,
-      @collection, region: 'main'
-    }
+    @view = new CalendarMainView {autoRender: true, @collection, region: 'main'}

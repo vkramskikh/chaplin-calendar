@@ -8,5 +8,46 @@ h1 {
   text-align: center;
 }
 
-#event-list, #grid {
+#grid {
+  background-color: #F1F1F1;
+  border: 1px solid #DDDDDD;
+  border-bottom: 0;
+  position: relative;
+  width: 500px;
 }
+
+.grid-cell {
+  height: 30px;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 5px 0 0 5px;
+}
+
+#grid-events {
+  position: absolute;
+  top: 0;
+}
+
+.grid-event {
+  position: absolute;
+  top: 0;
+  font-size: 12px;
+  width: 498px;
+  height: 30px;
+  background-color: #E4EFF8;
+  color: #444444;
+  border: 1px solid #9FC6E7;
+  overflow: hidden;
+}
+
+.grid-event .event-time {
+  float: left;
+  margin: 5px 0 0 5px;
+  width: 90px;
+  font-weight: bold;
+}
+
+.grid-event .event-name {
+  float: left;
+  margin: 4px 0 0 5px;
+}
+
