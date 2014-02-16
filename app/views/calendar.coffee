@@ -1,5 +1,6 @@
 BaseView = require '/views/base/view'
 CalendarEventListPaneView = require './event-list-pane'
+CalendarEventGridPaneView = require './event-grid-pane'
 
 module.exports = class CalendarMainView extends BaseView
   template: require './templates/calendar'
@@ -8,9 +9,6 @@ module.exports = class CalendarMainView extends BaseView
     gridPane: '#grid-pane'
   render: ->
     super
-    calendarEventListPaneView = new CalendarEventListPaneView {
-      autoRender: true,
-      @collection, region: 'eventListPane'
-    }
-    @subview 'eventListPane', calendarEventListPaneView
+    @subview 'eventListPane', new CalendarEventListPaneView {autoRender: true, @collection, region: 'eventListPane'}
+    @subview 'gridPane', new CalendarEventGridPaneView {autoRender: true, @collection, region: 'gridPane'}
 

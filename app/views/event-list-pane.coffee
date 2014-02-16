@@ -17,8 +17,4 @@ module.exports = class CalendarEventListPaneView extends BaseView
     newEvent.save()
   render: ->
     super
-    calendarEventListView = new ListCalendarEventsView {
-      autoRender: true,
-      @collection, region: 'eventList'
-    }
-    @subview 'eventList', calendarEventListView
+    @subview 'eventList', new ListCalendarEventsView {autoRender: true, @collection, region: 'eventList'}
