@@ -18,15 +18,24 @@ class GridCalendarEventView extends BaseView
       observe: ['start', 'end']
       update: ($el, time) ->
         $el.height time[1] - time[0] - 1
+  events:
+    dragstop: 'updateEventTime'
+  updateEventTime: ->
+    oldStartTime = @model.get('start')
+    oldEndTime = @model.get('end')
+    # sometimes result is +1/-1 pixel for some reason
+    newStartTime = Math.round(@$el.position().top / 30) * 30
+    console.log(oldEndTime, oldStartTime, newStartTime)
+    newEndTime = newStartTime + oldEndTime - oldStartTime
+    @model.set(start: newStartTime, end: newEndTime)
   render: ->
     super
     @$el.draggable({
+      containment: '#grid'
+      stack: '#grid .grid-event'
       snap: true
       axis: 'y'
       grid: [0, 30]
-      opacity: 0.5
-      containment: '#grid'
-      stack: '#grid-events .grid-event'
     })
     @stickit @model
 

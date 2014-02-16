@@ -47,12 +47,12 @@ h1 {
 .grid-event .event-time {
   float: left;
   margin: 5px 0 0 5px;
-  width: 90px;
+  width: 80px;
   font-weight: bold;
 }
 
 .grid-event .event-name {
   float: left;
-  margin: 4px 0 0 5px;
+  margin: 5px 0 0 5px;
 }
 
