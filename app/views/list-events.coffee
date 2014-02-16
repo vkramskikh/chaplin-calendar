@@ -14,7 +14,7 @@ class ListCalendarEventView extends BaseView
     @bindings =
       '[name=start]':
         observe: 'start'
-        selectOptions: collection: selectOptions
+        selectOptions: collection: selectOptions.slice(0, -1)
       '[name=end]':
         observe: 'end'
         selectOptions: collection: selectOptions

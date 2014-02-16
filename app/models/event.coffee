@@ -6,7 +6,7 @@ module.exports = class CalendarEvent extends Chaplin.Model
   generateIntervals: ->
     time = 0
     intervals = []
-    while time < 24 * 60
+    while time <= 24 * 60
       intervals.push time
       time += @interval
     intervals
