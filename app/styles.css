@@ -30,7 +30,7 @@ h1 {
 }
 
 .grid-event {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   width: 498px;
   overflow: hidden;
